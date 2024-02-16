@@ -798,6 +798,7 @@ class Connection(object):
         # obj_ids: quoted db object identifiers (sometimes schema-qualified)
         if obj_type in ('function', 'procedure'):
             obj_ids = []
+            raise Error(objs)
             for obj in objs:
                 try:
                     f, args = obj.split('(', 1)
